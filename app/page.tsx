@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Sparkles, MapPin, ShieldCheck } from 'lucide-react'
 
@@ -23,7 +22,7 @@ export default function HomePage() {
         {/* Subtitle */}
         <p className="text-base sm:text-lg lg:text-xl mb-10 max-w-3xl mx-auto px-2">
           Capture, store, and revisit your most cherished memories — safely and beautifully.
-          Whether it's a road trip, a family gathering, or a quiet moment you never want to forget,
+          Whether it&apos;s a road trip, a family gathering, or a quiet moment you never want to forget,
           MemoryKeeper lets you keep it forever.
         </p>
 

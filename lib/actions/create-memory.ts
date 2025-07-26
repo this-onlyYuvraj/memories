@@ -38,8 +38,8 @@ export async function createMemory(formData: FormData) {
       try {
         const img = JSON.parse(value)
         photos.push(img)
-      } catch (e) {
-        console.error("Invalid image JSON:", value)
+      } catch (error) {
+        console.error("Invalid image JSON:", error)
       }
     }
   }

@@ -1,5 +1,4 @@
 "use client"
-import { auth } from '@/auth';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { MapPin } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react'

@@ -18,6 +18,7 @@ import {
 } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
 import { CldUploadWidget, CloudinaryUploadWidgetResults } from 'next-cloudinary'
+import Image from 'next/image'
 
 interface Image {
   url: string
@@ -157,10 +158,12 @@ function SortableImageItem({
         {...attributes}
         {...listeners}
       >
-        <img
+        <Image
           src={image.url}
           alt="Uploaded"
           className="object-cover w-full h-32 sm:h-36 md:h-40 rounded"
+          width={600}
+          height={400}
         />
       </div>
       <button

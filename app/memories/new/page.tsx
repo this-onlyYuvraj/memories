@@ -75,7 +75,7 @@ export default function NewMemoryForm() {
           body: JSON.stringify({ publicIds }),
         })
       } catch (err) {
-        console.error('Failed to delete images from Cloudinary')
+        console.error('Failed to delete images from Cloudinary', err)
       }
     }
 
@@ -105,7 +105,6 @@ export default function NewMemoryForm() {
         )
       }
       e.preventDefault()
-      e.returnValue = ''
       return ''
     }
 
