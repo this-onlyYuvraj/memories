@@ -27,7 +27,7 @@ const mapContainerStyle = {
   height: '100%',
 }
 
-export default function PublicMemoryMap({ memories, onMapClick }: Props) {
+export default function PublicMemoryMap({onMapClick }: Props) {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
   })
