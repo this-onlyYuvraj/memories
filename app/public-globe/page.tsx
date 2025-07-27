@@ -2,7 +2,7 @@
 
 'use client'
 
-import { use, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Globe, { GlobeMethods } from 'react-globe.gl'
 import Image from 'next/image'
 import { format } from 'date-fns'
