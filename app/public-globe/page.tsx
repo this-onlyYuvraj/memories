@@ -2,7 +2,7 @@
 
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { use, useEffect, useRef, useState } from 'react'
 import Globe, { GlobeMethods } from 'react-globe.gl'
 import Image from 'next/image'
 import { format } from 'date-fns'
@@ -36,6 +36,8 @@ export default function PublicGlobePage() {
   const [isLoading, setIsLoading] = useState(true)
   const [mode, setMode] = useState<'globe' | 'map'>('globe')
   const [lightboxIndex, setLightboxIndex] = useState<number>(-1)
+  const [mapCenter, setMapCenter] = useState<{ lat: number; lng: number }>({ lat: 0, lng: 0 })
+  const [mapZoom, setMapZoom] = useState<number | 2>(2)
 
   useEffect(() => {
     const fetchPublicMemories = async () => {
@@ -73,9 +75,19 @@ export default function PublicGlobePage() {
         closest = memory
       }
     }
-
-    if (closest) {
-      setSelectedMemory(closest)
+    if(!closest) return
+    const isDifferent = !selectedMemory || selectedMemory.id != closest.id
+    if(isDifferent){
+      
+      setMapZoom(2)
+      setTimeout(()=>{
+        setMapCenter({lat:closest.lat, lng: closest.lng})
+        setMapZoom(6)
+      }, 1000)
+      setTimeout(()=>{
+        setSelectedMemory(closest)
+      },2200)
+      
     }
   }
 
@@ -146,6 +158,9 @@ export default function PublicGlobePage() {
               <MapComponent
                 memories={memories}
                 onMapClick={(lat, lng) => handleGlobeClick({ lat, lng })}
+                center={mapCenter}
+                zoom={mapZoom}
+
               />
             )}
           </div>

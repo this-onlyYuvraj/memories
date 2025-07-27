@@ -23,7 +23,7 @@ export default function HomePage() {
         <p className="text-base sm:text-lg lg:text-xl mb-10 max-w-3xl mx-auto px-2">
           Capture, store, and revisit your most cherished memories — safely and beautifully.
           Whether it&apos;s a road trip, a family gathering, or a quiet moment you never want to forget,
-          MemoryKeeper lets you keep it forever.
+          Memory lets you keep it forever.
         </p>
 
         {/* CTA Buttons */}
@@ -72,9 +72,9 @@ export default function HomePage() {
           {/* Feature 3 */}
           <div className="bg-white p-6 rounded-xl shadow hover:shadow-xl transition-all text-left h-full">
             <ShieldCheck className="h-6 w-6 text-pink-500 mb-3" />
-            <h3 className="font-semibold text-lg mb-2">Private & Secure</h3>
+            <h3 className="font-semibold text-lg mb-2">Public Globe</h3>
             <p className="text-sm text-pink-800 leading-relaxed">
-              Your memories are encrypted and only visible to you unless made public.
+              Explore real memories shared by people worldwide — feel their moments, stories, and places.
             </p>
           </div>
         </div>

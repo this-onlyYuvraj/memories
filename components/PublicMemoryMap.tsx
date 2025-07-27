@@ -20,6 +20,8 @@ interface Memory {
 interface Props {
   memories: Memory[]
   onMapClick: (lat: number, lng: number) => void
+  center?: { lat: number; lng: number }
+  zoom?:number
 }
 
 const mapContainerStyle = {
@@ -27,7 +29,7 @@ const mapContainerStyle = {
   height: '100%',
 }
 
-export default function PublicMemoryMap({onMapClick }: Props) {
+export default function PublicMemoryMap({onMapClick , center, zoom}: Props) {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY!,
   })
@@ -37,8 +39,8 @@ export default function PublicMemoryMap({onMapClick }: Props) {
   return (
     <GoogleMap
       mapContainerStyle={mapContainerStyle}
-      zoom={2}
-      center={{ lat: 20, lng: 0 }}
+      zoom={zoom}
+      center={center}
       onClick={(e) => {
         if (e.latLng) {
           onMapClick(e.latLng.lat(), e.latLng.lng())
