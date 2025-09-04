@@ -10,7 +10,6 @@ export default async function MemoryDetail({
 }) {
     const {memoryId} = await params
     const session = await auth()
-    console.log(memoryId)
     if(!session){
         return <div>Please Login</div>
     }
